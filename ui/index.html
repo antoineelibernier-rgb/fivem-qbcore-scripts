@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablette de Gestion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tablet" class="tablet hidden">
+        <div class="tablet-header">
+            <h1 id="companyName">Tablette de Gestion</h1>
+            <button id="closeBtn" class="close-btn">✕</button>
+        </div>
+        
+        <div class="tablet-content">
+            <!-- Navigation -->
+            <div class="tablet-nav">
+                <button class="nav-btn active" data-tab="overview">Vue d'ensemble</button>
+                <button class="nav-btn" data-tab="employees">Employés</button>
+                <button class="nav-btn" data-tab="statistics">Statistiques</button>
+                <button class="nav-btn" data-tab="finances">Finances</button>
+            </div>
+            
+            <!-- Vue d'ensemble -->
+            <div id="overview" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Solde</h3>
+                        <p id="balance" class="stat-value">$0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Revenus</h3>
+                        <p id="income" class="stat-value">$0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Employés</h3>
+                        <p id="employeeCount" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Dépenses</h3>
+                        <p id="expenses" class="stat-value">$0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Employés -->
+            <div id="employees" class="tab-content">
+                <table class="employees-table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Rôle</th>
+                            <th>Salaire</th>
+                            <th>Embauché</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeesList">
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Statistiques -->
+            <div id="statistics" class="tab-content">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <h3>Revenus Totaux</h3>
+                        <p id="totalRevenue" class="stat-text">$0</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Dépenses Totales</h3>
+                        <p id="totalExpenses" class="stat-text">$0</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Employés Embauchés</h3>
+                        <p id="totalHired" class="stat-text">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Employés Licenciés</h3>
+                        <p id="totalFired" class="stat-text">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Finances -->
+            <div id="finances" class="tab-content">
+                <div class="finance-form">
+                    <h3>Retirer de l'argent</h3>
+                    <div class="form-group">
+                        <input type="number" id="withdrawAmount" placeholder="Montant">
+                        <button id="withdrawBtn" class="action-btn">Retirer</button>
+                    </div>
+                </div>
+                <div class="finance-form">
+                    <h3>Ajouter de l'argent</h3>
+                    <div class="form-group">
+                        <input type="number" id="depositAmount" placeholder="Montant">
+                        <button id="depositBtn" class="action-btn">Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
